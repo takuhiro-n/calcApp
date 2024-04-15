@@ -9,7 +9,8 @@ const Calculator = () => {
         setInput(input + value);
     };
 
-    // 計算結果を表示する関数
+    // 計算結果を表示する関数a
+
     const calculate = () => {
         try {
             setResult(eval(input).toString());
