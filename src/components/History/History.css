@@ -1,0 +1,60 @@
+/* Historyコンポーネントのコンテナスタイル */
+.history-container {
+    padding: 20px;
+    background-color: #f8f8f8;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+    width: 90%;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* 計算履歴の見出しスタイル */
+.history-container h2 {
+    color: #333;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* 履歴リストのスタイリング */
+.history-list {
+    max-height: 200px;  /* 最大高さを設定して、それ以上になったらスクロール */
+    overflow-y: auto;   /* 縦スクロールバーの表示 */
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+/* 各履歴項目のスタイリング */
+.history-item {
+    padding: 10px;
+    border-bottom: 1px solid #eee; /* 項目間に境界線を描画 */
+}
+
+/* 最後の項目の境界線を取り除く */
+.history-item:last-child {
+    border-bottom: none;
+}
+
+/* 履歴をクリアするボタンのスタイリング */
+.clear-history {
+    display: block; /* ブロック要素として表示 */
+    width: 100%; /* コンテナの幅いっぱいに広がる */
+    padding: 10px;
+    margin-top: 20px;
+    background-color: #ff4d4f; /* 赤色で目立つように */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    text-align: center;
+}
+
+/* ホバー時のボタンのスタイル変更 */
+.clear-history:hover {
+    background-color: #ff7875; /* 明るい赤色に変更 */
+}

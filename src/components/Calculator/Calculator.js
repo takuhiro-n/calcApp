@@ -1,35 +1,35 @@
 import React, { useState } from 'react';
 import './Calculator.css';
 
-
-const Calculator = () => {
+const Calculator = ({ onCalculate }) => {  // onCalculateをpropsとして受け取る
     const [input, setInput] = useState('');
     const [result, setResult] = useState('');
 
-    // 数値と演算子を入力する関数
     const handleInput = (value) => {
         setInput(input + value);
     };
-
-    // 計算結果を表示する関数a
-
+    /* eslint-disable no-eval */
     const calculate = () => {
         try {
-            // eslint-disable-next-line no-eval
-            setResult(eval(input).toString());
+            const calcResult = eval(input).toString();  // 計算結果を一時変数に保存
+
+            setResult(calcResult);
+            onCalculate(input, calcResult);  // 計算履歴に追加
+            setInput('');
+            
+
         } catch (error) {
             setResult('Error');
         }
     };
-
-    // 入力をクリアする関数
+    /* eslint-enable no-eval */
     const clearInput = () => {
         setInput('');
         setResult('');
     };
 
     return (
-        <div>
+        <div className='calculator-container'>
             <div className="display">
                 <input type="text" value={input} onChange={(e) => setInput(e.target.value)} />
                 <div className="result">{result}</div>
